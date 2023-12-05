@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 export default function cadastrar (){
     
         const listaLocalStorage= JSON.parse(localStorage.getItem("Lista"));
-        const [atividade, setAtividade] = useState("");
-        const [preco, setPreco] = useState("");
-        const [lista, setLista] = useState(listaLocalStorage || []);
+        const [nome, setNome] = useState("");
+        const [autor, setAutor] = useState("");
+        const [descricao, setDescricao] = useState(listaLocalStorage || []);
+        const [url, setUrl] = useState(listaLocalStorage || []);
         const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
         
         useEffect(()=> {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
