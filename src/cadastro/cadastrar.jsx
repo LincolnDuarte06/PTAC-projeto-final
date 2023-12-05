@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 export default function Cadastrar (){
     
-        const listaLocalStorage= JSON.parse(localStorage.getItem("Lista"));
+        const listaLocalStorage= JSON.parse(localStorage.getItem("Lista"))|| [];
         const [nomeMSC, setNomeMSC] = useState("");
         const [artista, setArtista] = useState("");
         const [url, setUrl] = useState("");
         const [vizualizacao, setVizualizacao] = useState("");
         const [lacamento, setLancamento] = useState("");
-        const [lista, setLista] = useState(listaLocalStorage || []);                                                                                                                          
+        const [lista, setLista] = useState(listaLocalStorage);                                                                                                                          
         const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
         
         useEffect(()=> {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
@@ -37,7 +37,7 @@ export default function Cadastrar (){
 
         
         return (
-            <div class="container">
+            <div className="container">
                 
                 <h1>Lista de Atividades</h1>
                 <form onSubmit={salvar}>
@@ -58,8 +58,8 @@ export default function Cadastrar (){
 
                         <h1>URL:</h1>
                         <input type="text"
-                        value={Link}
-                        onChange={(e) => { setLink(e.target.value) }} />
+                        value={url}
+                        onChange={(e) => { setUrl(e.target.value) }} />
 
                         <h1>Lançamento:</h1>
                         <input type="text"

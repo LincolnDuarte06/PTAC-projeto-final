@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cadastrar from './cadastro/cadastrar'
 import Home from './Home'
-import descricao from './descricao'
+import Descricao from './descricao/descricao'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,8 +11,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/descricao" element={<descricao />}></Route>
-        <Route path="/cadastro" element={< cadastrar />}></Route>
+        <Route path="/descricao" element={<Descricao />}></Route>
+        <Route path="/cadastro" element={< Cadastrar />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

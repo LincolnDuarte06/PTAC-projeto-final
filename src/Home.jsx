@@ -8,9 +8,7 @@ export default function Home(){
   return(
     <div>
     <Header/>
-    {lista.map((listaVideos)=>
     <Card listaVideos={listaVideos}/>
-    )}
     </div>
     
   );
