@@ -2,7 +2,6 @@ import {Link} from "react-router-dom"
 export default function Card ({listaVideos}){
     return(
         
-            listaVideos.map((video) =>
             <div className="card">
                 <Link to={`./descricao/descricao/${video.id}`}>
                <p>Descrição</p>
@@ -14,5 +13,5 @@ export default function Card ({listaVideos}){
                </div>
             )
        
-    );
+    
 }
