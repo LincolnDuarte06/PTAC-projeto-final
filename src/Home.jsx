@@ -1,5 +1,12 @@
+import React from "react";
+import {useState} from "react";
+import {Link} from "react-router-dom";
+import header from "./componentes/header"
+
 export default function Home(){
     return(
-        <h1>PTAC 2 - PROJETO FINAL</h1>
+        <div>
+            <header/>
+            </div>
      );
 }
