@@ -1,12 +1,10 @@
-import React from "react";
-import {useState} from "react";
-import {Link} from "react-router-dom";
-import header from "./componentes/header"
-
+import Header from "./componentes/header";
+import Card from "./componentes/card";
 export default function Home(){
-    return(
-        <div>
-            <header/>
-            </div>
-     );
+  return(
+    <div>
+    <Header/>
+    <Card listaVideos={listaVideos}/>
+    </div>
+  )
 }
