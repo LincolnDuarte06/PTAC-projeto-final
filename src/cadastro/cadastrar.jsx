@@ -3,64 +3,74 @@ import { Link } from "react-router-dom";
 export default function cadastrar (){
     
         const listaLocalStorage= JSON.parse(localStorage.getItem("Lista"));
-        const [nome, setNome] = useState("");
-        const [autor, setAutor] = useState("");
-        const [descricao, setDescricao] = useState(listaLocalStorage || []);
-        const [url, setUrl] = useState(listaLocalStorage || []);
+        const [nomeMSC, setNomeMSC] = useState("");
+        const [artista, setArtista] = useState("");
+        const [url, setUrl] = useState("");
+        const [vizualizacao, setVizualizacao] = useState("");
+        const [lacamento, setLancamento] = useState("");
+        const [lista, setLista] = useState(listaLocalStorage || []);                                                                                                                          
         const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
         
         useEffect(()=> {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
+
+
     
          //-------------SALVAR-------------------//
         const salvar = (e) => {
             e.preventDefault();
             setLista([...lista, {
-                atividade: atividade,
+                nomeMSC: nomeMSC,
+                artista: artista,
+                url: url,
+                vizualizacao: vizualizacao,
+                lacamento: lacamento,
                 id: id,
-                preco:preco
             }]);
             setId(id + 1);
-            setAtividade("");
-            setPreco("");
+            setNomeMSC("");
+            setArtista("");
+            setUrl("");
+            setVizualizacao("");
+            setLancamento("");
         };
 
 
-        const remover = (id) => {
-            /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
-            const auxLista = [];
-            lista.map((lista) => {
-                if (lista.id !== id) {
-                    auxLista.push(lista);
-                }
-            });
-            setLista(auxLista);
-        }
+        
         return (
             <div class="container">
                 
                 <h1>Lista de Atividades</h1>
                 <form onSubmit={salvar}>
+                    <h1>Nome da Musga:</h1>
                     <input type="text"
-                        value={atividade}
-                        onChange={(e) => { setAtividade(e.target.value) }} />
-    
+                        value={nomeMSC}
+                        onChange={(e) => { setNomeMSC(e.target.value) }} />
+
+                        <h1>Artista:</h1>
                         <input type="text"
-                        value={preco}
-                        onChange={(e) => { setPreco(e.target.value) }} />
+                        value={artista}
+                        onChange={(e) => { setArtista(e.target.value) }} />
+                        
+                        <h1>Vizualizacao:</h1>
+                        <input type="text"
+                        value={vizualizacao}
+                        onChange={(e) => { setVizualizacao(e.target.value) }} />
+
+                        <h1>URL:</h1>
+                        <input type="text"
+                        value={Link}
+                        onChange={(e) => { setLink(e.target.value) }} />
+
+                        <h1>Lançamento:</h1>
+                        <input type="text"
+                        value={lacamento}
+                        onChange={(e) => { setLancamento(e.target.value) }} />
+
                         <br></br>
+
                     <button>ADICIONAR</button>
                 </form>
-                {lista.map((ativ) =>
-                    <ul key={ativ.id}>
-                        <li>
-                            <p className="p1">{ativ.id} {ativ.atividade} </p>
-                            <p className="p">{ativ.preco}</p>
-                            
-                            <button onClick={() => remover(ativ.id)}>Remover</button>
-                        </li>
-                    </ul>
-                )}
-                <Link className="botao-home" to="/">Voltar a ser natural</Link>
+             
             </div>
             
         );
