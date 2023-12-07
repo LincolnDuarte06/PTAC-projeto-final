@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Header from "../componentes/header";
 export default function Cadastrar (){
     
         const listaLocalStorage= JSON.parse(localStorage.getItem("Lista"))|| [];
@@ -38,7 +39,7 @@ export default function Cadastrar (){
         
         return (
             <div className="container">
-                
+                <Header/>
                 <h1>Lista de Atividades</h1>
                 <form onSubmit={salvar}>
                     <h1>Nome da Musga:</h1>
