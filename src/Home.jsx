@@ -1,10 +1,11 @@
 import Header from "./componentes/header";
 import Card from "./componentes/card"; 
 
-
-const listaVideos = JSON.parse(localStorage.getItem("listaVideos")) || [];
-
 export default function Home(){
+
+  const listaVideos = JSON.parse(localStorage.getItem("Lista")) || [];
+  console.log(listaVideos)
+
   return(
     <div>
     <Header/>
