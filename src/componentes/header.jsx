@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-export default function header(){
+export default function Header(){
     return(
         <div>
              <h1> PTAC 2 - PROJETO FINAL</h1>
