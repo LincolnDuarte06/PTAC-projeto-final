@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import '../home.css'
 export default function Header(){
     return(
         <div>
+          <center>
              <h1> PTAC 2 - PROJETO FINAL</h1>
+             </center>
          <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
     <a className="navbar-brand" href="/">Home</a>

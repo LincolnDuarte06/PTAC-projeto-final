@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Header from "../componentes/header";
-
+import '../home.css'
 
 export default function Descricao(){
 const {id} = useParams();
@@ -15,12 +15,17 @@ else{ return  null;
 });
 
 return(
+    
     <div>
     <Header/>
-    <iframe width="100" height="100" src={"https://www.youtube.com/embed/" + atividade[0].url.slice(17)}></iframe>
-        <p>{atividade[0].artista}</p>
-        <p>{atividade[0].nomeMSC}</p>
-    
+    <br></br>
+    <center>
+    <iframe width="500" height="500" src={"https://www.youtube.com/embed/" + atividade[0].url.slice(17)}></iframe>
+        <h2>{atividade[0].artista}</h2>
+        <h2>{atividade[0].nomeMSC}</h2>
+        <h2>{atividade[0].vizualizacao}</h2>
+        <h2>{atividade[0].lacamento}</h2>
+        </center>
     </div>
     )
 }

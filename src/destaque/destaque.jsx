@@ -9,6 +9,7 @@ export default function Destaque(){
   return(
     <div>
     <Header/>
+    <br></br>
     <Card listaVideos={auimaue}/>
     </div>
     
