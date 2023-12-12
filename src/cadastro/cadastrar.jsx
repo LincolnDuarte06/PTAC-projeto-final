@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../componentes/header";
 export default function Cadastrar (){
     
@@ -14,12 +14,12 @@ export default function Cadastrar (){
         
         useEffect(()=> {localStorage.setItem("Lista", JSON.stringify(lista))},[lista]);
 
-
+        const auimaue = useNavigate();
     
          //-------------SALVAR-------------------//
         const salvar = (e) => {
             e.preventDefault();
-            setLista([...lista, {
+             setLista([...lista, {
                 nomeMSC: nomeMSC,
                 artista: artista,
                 url: url,
@@ -33,6 +33,7 @@ export default function Cadastrar (){
             setUrl("");
             setVizualizacao("");
             setLancamento("");
+            auimaue("/");
         };
 
 
